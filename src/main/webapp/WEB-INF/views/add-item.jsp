@@ -24,28 +24,30 @@
 		<a href="/" class="navbar-brand">Brand</a>
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="#">Home</a></li>
-			<li><a href="/list-todo.do">Todos</a></li>
+			<li><a href="/list-item.do">Items</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/login.do">Login</a></li>
+			<li><a href="/logout.do">Logout</a></li>
 		</ul>
 	</nav>
 	
 <!-- BODY -->
 	<div class="container">
-		<H1>Welcome ${user}</H1>
-	 	<p>Your TODOs are:</p>
-		<ol>
-			<c:forEach items="${todos}" var="todo">
-				<!-- 'c' is the reference to use JSTL core library -->
-				<li>${todo.name}&nbsp;&nbsp; <a href="\delete-todo.do?todo=${todo.name}">Delete</a></li>
-			</c:forEach>
-		</ol>
-		 	<form action="/add-todo.do" method="post">
- 	<!-- The request is GET if is not specified -->
- 		<input type="text" name="todo" /><input type="submit" value="Add" />
- 		<!-- put the text into a variable "todo" an send in in a request-->
- 	</form>
+		Your New Action Item: 
+		<form action="/add-item.do" method="post">
+			<!-- The request is GET if is not specified -->
+			<fieldSet class="form-group">
+				<label>Description</label>
+				<input class="form-control" type="text" name="item"/> <br/>
+			</fieldSet>
+			<fieldSet class="form-group">
+				<label>Category</label>
+				<input class="form-control" type="text" name="category" /> <br/>
+			</fieldSet>
+			
+			<input class="btn btn-success" type="submit" value="Add"/>
+			<!-- put the text into a variable "item" an send in in a request-->
+		</form>
 	</div>
 	
 <!-- FOOTER -->

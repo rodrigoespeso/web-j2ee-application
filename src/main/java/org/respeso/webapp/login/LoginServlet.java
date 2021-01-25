@@ -1,15 +1,12 @@
 package org.respeso.webapp.login;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.respeso.webapp.todo.TodoService;
 
 /**
  * Servlet implementation class LoginNewServlet
@@ -28,6 +25,7 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/*
 		 * Html code directly writed into the servlet:
@@ -59,6 +57,7 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String user = request.getParameter("user");
 		String password = request.getParameter("password");
@@ -67,7 +66,7 @@ public class LoginServlet extends HttpServlet {
 			 * Redirect to a JSP
 			 */
 //			request.setAttribute("user", user);
-//			request.setAttribute("todos", ts.retrieveTodos());
+//			request.setAttribute("items", ts.retrieveItems());
 //			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
 			
 			/*
@@ -76,8 +75,16 @@ public class LoginServlet extends HttpServlet {
 			 * To do that we need a session variable
 			 */
 //			request.setAttribute("user", user); // request scope var
+			
+			/*
+			 * We can use "name" sesion variable to know if anybody is loggued in. 
+			 * If "name" is not informed nobody is logged in.
+			 * For implement the logic we a Filter, a Java EE feature what intercepts calls to servlets.
+			 * -> LoginRequiredFilter: if there is a name in session, we allow the request go through
+			 * 	else, redirect to the login page
+			 */
 			request.getSession().setAttribute("user", user);	// session scope var
-			response.sendRedirect("/list-todo.do");	// The redirect is other diferens request, "user" param does not reach this one. We need insted a session variable
+			response.sendRedirect("/list-item.do");	// The redirect is other diferens request, "user" param does not reach this one. We need insted a session variable
 		}else {
 			request.setAttribute("errorMessage", "Invalid user or pass!");
 			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
