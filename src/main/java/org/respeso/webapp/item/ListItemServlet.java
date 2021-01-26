@@ -1,4 +1,4 @@
-package org.respeso.webapp.todo;
+package org.respeso.webapp.item;
 
 import java.io.IOException;
 
@@ -9,26 +9,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class 
+ * Servlet implementation class to list all the items
  */
-@WebServlet("/delete-item.do")
-public class DeleteItemServlet extends HttpServlet {
+@WebServlet("/list-item.do")
+public class ListItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private ItemService is = new ItemService();   
+   
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeleteItemServlet() {
+    public ListItemServlet() {
         super();
     }
 
 	/**
+	 * Shows the list item page, receiving the items from the service class
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		is.deleteItem(new Item(request.getParameter("item"), request.getParameter("category")));
-		response.sendRedirect("/list-item.do");
+		request.setAttribute("items", is.retrieveItems());
+		request.getRequestDispatcher("/WEB-INF/views/list-item.jsp").forward(request, response);
 	}
 	
 }

@@ -1,5 +1,9 @@
-package org.respeso.webapp.todo;
+package org.respeso.webapp.item;
 
+/**
+ * Representation of a Item 
+ *  @author Rodrigo Espeso
+ */
 public class Item {
 	
 	private String name;

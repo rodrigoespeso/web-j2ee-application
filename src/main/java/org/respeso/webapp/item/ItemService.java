@@ -1,8 +1,13 @@
-package org.respeso.webapp.todo;
+package org.respeso.webapp.item;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The service class with implementation of the business of the WebApp
+ * @author Rodrigo Espeso
+ *
+ */
 public class ItemService {
 	
 	private static List<Item> items = new ArrayList<>();
