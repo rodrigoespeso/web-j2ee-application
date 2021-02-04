@@ -11,8 +11,10 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-/*
+/**
  * Performs the filter actions when URL matches with *.do
+ * 
+ * @author Rodrigo Espeso
  */
 @WebFilter(urlPatterns = "*.do")
 public class LoginRequiredFilter implements Filter {

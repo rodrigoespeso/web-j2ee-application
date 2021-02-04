@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class LoginNewServlet
+ * Servlet implementation class LoginNewServlet.
+ * 
+ * @author Rodrigo Espeso
  */
 @WebServlet("/logout.do")
 public class LogoutServlet extends HttpServlet {

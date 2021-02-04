@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The service class with implementation of the business of the WebApp
+ * The service class with implementation of the business of the WebApp.
+ * 
  * @author Rodrigo Espeso
  *
  */

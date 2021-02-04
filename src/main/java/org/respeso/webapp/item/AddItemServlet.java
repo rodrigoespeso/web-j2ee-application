@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class to add a new item to the list
+ * Servlet implementation class to add a new item to the list.
+ * 
  * @author Rodrigo Espeso
  */
 @WebServlet("/add-item.do")

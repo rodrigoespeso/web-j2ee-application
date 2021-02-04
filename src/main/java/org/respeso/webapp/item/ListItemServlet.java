@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class to list all the items
+ * Servlet implementation class to list all the items.
+ * 
+ * @author Rodrigo Espeso
  */
 @WebServlet("/list-item.do")
 public class ListItemServlet extends HttpServlet {

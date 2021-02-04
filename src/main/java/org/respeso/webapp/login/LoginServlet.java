@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class to log in the WebApp
+ * Servlet implementation class to log in the WebApp.
+ * 
+ * @author Rodrigo Espeso
  */
 @WebServlet("/login.do")
 public class LoginServlet extends HttpServlet {

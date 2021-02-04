@@ -1,7 +1,8 @@
 package org.respeso.webapp.login;
 
 /**
- * Log-in service class of the WebApp
+ * Log-in service class of the WebApp.
+ * 
  * @author Rodrigo Espeso
  *
  */

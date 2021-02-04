@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class to delete an item from the list
+ * Servlet implementation class to delete an item from the list.
+ * 
  *  @author Rodrigo Espeso
  */
 @WebServlet("/delete-item.do")
